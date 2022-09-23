@@ -1,0 +1,4 @@
+configuration:
+  retention:
+    name: Retention
+    description: Legt die Dauer für die Aufbewahrung von Daten in Monaten fest. Die Angabe der Dauer kann aber auch in Tagen oder Jahren erfolgen - z. B. `2y` oder `30d`.

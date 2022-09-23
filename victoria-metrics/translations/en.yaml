@@ -1,0 +1,5 @@
+configuration:
+  retention:
+    name: Retention
+    description: Defines the retention in month to store data. You can also use years or days for example `2y` or `30d`.
+    
