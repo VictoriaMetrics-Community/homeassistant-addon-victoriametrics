@@ -1,4 +1,8 @@
-# Victoria Metrics for Homeassistant
+# Victoria Metrics for Home Assistant
+
+## Data Storage
+Data is stored in folder /share/victoria-metrics-data of Home Assistant OS to make individual backups easy.
+
 
 ## Configuration
 
@@ -9,13 +13,13 @@ See: https://github.com/VictoriaMetrics/VictoriaMetrics#retention
 
 
 ## Sending Data to VictoriaMetrics
-To send data from HomeAssistant to VictoriaMetrics, you can use the `InfluxDB` integration. Add the following code
+To send data from Home Assistant to VictoriaMetrics, you can use the `InfluxDB` integration. Add the following code
 to your `configuration.yaml` to have a basic setup.
 
 ```yml
 influxdb:
   api_version: 1
-  host: INSERT_YOUR_HOMEASSISTANT_IP_HERE
+  host: localhost
   port: 8428
   measurement_attr: domain__device_class
   include:
