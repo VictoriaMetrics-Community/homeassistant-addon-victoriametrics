@@ -31,3 +31,15 @@ There are many reasons to switch to Victoria Metrics. Compared to other products
 This Add-On continues the work of Andreas Habel whose [hassio-victoriametrics](https://github.com/Exceptionfault/hassio-victoriametrics) add-on was not updated anymore since 2021.
 I developed this mainly for my purpose running VictoriaMetrics on my Raspberry Pi 4 running Home Assistant Operating System.
 The direction of InfluxDB 2.0 was not what I wanted in combination with Grafana so VictoriaMetrics Time Series Database was the best choice.
+
+
+## Steps to get everything running
+
+* Just copy the folder `victoria-metrics` to your `homeassistant/addons/`
+* Install the Add-on [![Open your Home Assistant instance and show the Supervisor add-on store.](https://my.home-assistant.io/badges/supervisor_store.svg)](https://my.home-assistant.io/redirect/supervisor_store/))
+* Read the Add-on documentation
+* Check the configuration page of the Add-on to change retention time - default is 99 years
+* Now you can press Start - the first start can take a minute or two
+* When the green circle shows up victoriametrics is running and ready for your data
+* Add influxdb integration to your homeassistant config (using the option `measurement_attr: entity_id` is recommended)
+* Restart Home Assistant

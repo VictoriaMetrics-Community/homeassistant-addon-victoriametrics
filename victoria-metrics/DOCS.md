@@ -1,7 +1,19 @@
 # Victoria Metrics for Home Assistant
 
+
+## Steps to get everything running
+* Just copy the folder `victoria-metrics` to your `homeassistant/addons/`
+* Install the Add-on [![Open your Home Assistant instance and show the Supervisor add-on store.](https://my.home-assistant.io/badges/supervisor_store.svg)](https://my.home-assistant.io/redirect/supervisor_store/))
+* Read the Add-on documentation
+* Check the configuration page of the Add-on to change retention time - default is 99 years
+* Now you can press Start - the first start can take a minute or two
+* When the green circle shows up victoriametrics is running and ready for your data
+* Add influxdb integration to your homeassistant config (using the option `measurement_attr: entity_id` is recommended)
+* Restart Home Assistant
+
+
 ## Data Storage
-Data is stored in folder /share/victoria-metrics-data of Home Assistant OS to make individual backups easy.
+VictoriaMetrtics Data is stored in folder /share/victoria-metrics-data of Home Assistant OS to make individual backups easy.
 
 
 ## Configuration
@@ -12,18 +24,17 @@ To define the retention, that is how long VictoriaMetrics will keep it's data, s
 See: https://github.com/VictoriaMetrics/VictoriaMetrics#retention
 
 
-## Sending Data to VictoriaMetrics
-To send data from Home Assistant to VictoriaMetrics, you can use the `InfluxDB` integration. Add the following code
-to your `configuration.yaml` to have a basic setup.
+### Sending data to VictoriaMetrics
+To send data from Home Assistant to VictoriaMetrics, you can use the `InfluxDB` integration. 
+Add the following code to your `configuration.yaml` to have a basic setup.
+With the option `measurement_attr: entity_id` you will get the entity_id as metric name what is great in combination with Grafana - just one click and you get the data you want. In Grafana you can use the prometheus data source to get access to your time series data. Have fun!
 
 ```yml
 influxdb:
   api_version: 1
-  host: 192.168.178.181
+  host: <<<YOUR LOCAL HOME ASSISTANT IP>>>
   port: 8428
   max_retries: 3
-  ssl: false
-  verify_ssl: false
   measurement_attr: entity_id
   tags_attributes:
     - friendly_name
