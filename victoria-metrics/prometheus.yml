@@ -1,15 +1,18 @@
 global:
   # How frequently to scrape targets by default.
   scrape_interval: 1m
-  scrape_timeout: 20s
+  scrape_timeout: 15s
 
 scrape_configs:
-
-  - job_name: "homeassistant"
-    scrape_interval: 30s
+  - job_name: "hass"
+    scrape_interval: 20s
     metrics_path: /api/prometheus
-    bearer_token: "add-your-token-here"
+
+    # https://www.home-assistant.io/integrations/prometheus/
+    # Use homeassistant generated token as credentials
+    authorization:
+      credentials: "<<<HOME ASSISTANT GENERATED TOKEN>>>"
 
     scheme: http
     static_configs:
-      - targets: ['localhost:8123']
+      - targets: ['<<<HOME ASSISTANT IP>>>:8123']
