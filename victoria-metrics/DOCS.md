@@ -3,7 +3,8 @@
 
 ## Steps to get everything running
 * Just copy the folder `victoria-metrics` to your `homeassistant/addons/`
-* Install the Add-on [![Open your Home Assistant instance and show the Supervisor add-on store.](https://my.home-assistant.io/badges/supervisor_store.svg)](https://my.home-assistant.io/redirect/supervisor_store/))
+* Install the Add-on  
+  [![Open your Home Assistant instance and show the Supervisor add-on store.](https://my.home-assistant.io/badges/supervisor_store.svg)](https://my.home-assistant.io/redirect/supervisor_store/)
 * Read the Add-on documentation
 * Check the configuration page of the Add-on to change retention time - default is 99 years
 * Now you can press Start - the first start can take a minute or two
@@ -27,7 +28,7 @@ See: https://github.com/VictoriaMetrics/VictoriaMetrics#retention
 ### Sending data to VictoriaMetrics
 To send data from Home Assistant to VictoriaMetrics, you can use the `InfluxDB` integration. 
 Add the following code to your `configuration.yaml` to have a basic setup.
-With the option `measurement_attr: entity_id` you will get the entity_id as metric name what is great in combination with Grafana - just one click and you get the data you want. In Grafana you can use the prometheus data source to get access to your time series data. Have fun!
+With the option `measurement_attr: entity_id` you will get the `entity_id` as metric name what is great in combination with Grafana - just one click and you get the data you want. In Grafana you can use the prometheus data source to get access to your time series data. Have fun!
 
 ```yml
 influxdb:
@@ -137,3 +138,37 @@ prometheus:
 Finally check the `prometheus.yml` of this addon and adjust IP of your installation. 
 Also make sure to create a long-living token as `bearer_token` for authentication.
 -->
+
+
+### Grafana
+
+#### Setup data source
+
+Select Prometheus as Data Source with the following parameters:
+
+HTTP / Field: URL  
+```http://YOUR_HOMEASSISTANT_IP_ADDRESS:8428/prometheus```
+
+HTTP / Field: Access  
+```Server (default)```
+
+
+#### Add a panel
+
+To get a graph in your dashboard you just have to add a panel.
+Then click on `Metric` in the Query UI and start typing for example `livi temp` to find the entity `sensor.livingroom_temperature_value` and show the temperature graph after pressing the blue button `Run queries` or `Apply`.
+
+
+#### Show friendly names
+
+After adding a entity to your graph you will probably change the long text in the legend to a more readable one.
+You can do this for all metrics/entities in the panel at once:
+
+Sidebar / Standard Options / Field: Display name  
+```${__field.labels.friendly_name}```
+
+Or you can only change the name of one metric/entity:
+
+Query / Field: Legend  
+```{{friendly_name}}```
+

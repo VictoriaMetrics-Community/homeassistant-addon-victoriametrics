@@ -36,7 +36,8 @@ The direction of InfluxDB 2.0 was not what I wanted in combination with Grafana 
 ## Steps to get everything running
 
 * Just copy the folder `victoria-metrics` to your `homeassistant/addons/`
-* Install the Add-on [![Open your Home Assistant instance and show the Supervisor add-on store.](https://my.home-assistant.io/badges/supervisor_store.svg)](https://my.home-assistant.io/redirect/supervisor_store/))
+* Install the Add-on  
+  [![Open your Home Assistant instance and show the Supervisor add-on store.](https://my.home-assistant.io/badges/supervisor_store.svg)](https://my.home-assistant.io/redirect/supervisor_store/)
 * Read the Add-on documentation
 * Check the configuration page of the Add-on to change retention time - default is 99 years
 * Now you can press Start - the first start can take a minute or two

@@ -1,3 +1,7 @@
+## 1.8.10
+
+- Updated documentation and added Grafana tips
+
 ## 1.8.9
 
 - Changed configuration files
