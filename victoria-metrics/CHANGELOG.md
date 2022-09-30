@@ -1,3 +1,7 @@
+## 1.8.11
+
+- Added support for amd64 on linux
+
 ## 1.8.10
 
 - Updated documentation and added Grafana tips
