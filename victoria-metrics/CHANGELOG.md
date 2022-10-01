@@ -1,6 +1,7 @@
 ## 1.8.10
 
 - Updated documentation and added Grafana tips
+- Replace binary from docker image victoriametrics/victoria-metrics:v1.81.2 with official build https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/v1.81.2/victoria-metrics-linux-arm-v1.81.2.tar.gz
 
 ## 1.8.9
 
