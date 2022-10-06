@@ -1,3 +1,7 @@
+## 1.8.12
+
+- Fixed retention scheme was not passed to victoria metrics leading to a default retention of 1m
+
 ## 1.8.11
 
 - Added support for amd64 on linux
