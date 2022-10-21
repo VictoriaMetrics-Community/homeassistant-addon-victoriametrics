@@ -1,0 +1,10 @@
+#!/usr/bin/with-contenv bashio
+set -e
+
+RETENTION=$(bashio::config 'retention')
+ARGS=$(bashio::config 'additionalArguments')
+
+bashio::log.info "${RETENTION}"
+bashio::log.info "Starting Victoria Metrics with retention set to $RETENTION"
+bashio::log.info "Starting Victoria Metrics with args set to $ARGS"
+"/victoria-metrics-prod" "-storageDataPath" "/share/victoria-metrics-data" -retentionPeriod $RETENTION $ARGS

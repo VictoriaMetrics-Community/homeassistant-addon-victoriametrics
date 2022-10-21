@@ -1,3 +1,15 @@
+## 1.8.13
+
+- Added additionalArgs parameter to allow passing additional options to VictoriaMetrics
+
+## 1.8.12
+
+- Fixed retention scheme was not passed to victoria metrics leading to a default retention of 1m
+
+## 1.8.11
+
+- Added support for amd64 on linux
+
 ## 1.8.10
 
 - Updated documentation and added Grafana tips
