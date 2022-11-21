@@ -1,3 +1,7 @@
+## 1.8.14
+
+- Updated to VictoriaMetrics 1.83.1
+
 ## 1.8.13
 
 - Added additionalArgs parameter to allow passing additional options to VictoriaMetrics
