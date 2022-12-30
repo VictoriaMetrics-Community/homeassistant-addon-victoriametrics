@@ -35,12 +35,13 @@ The direction of InfluxDB 2.0 was not what I wanted in combination with Grafana 
 ## Installation and configuration
 (These instructions are intended for experienced Home Assistant users.) 
 
-1. Add the reposity:
-*https://github.com/fuslwusl/homeassistant-addon-victoriametrics*
-to the HA Add-ons ADD-ON STORE (and refresh/ reload the browser page)
-2. **Install** the add-on
-3. Read the add-on documentation in the *Victoria Metrics* **documentation** tab
-4. **Start** the *Victoria Metrics* add-on
-5. **Add the *influxdb* integration** to your Home Assistant configuration 
+1. Add the reposity. (Quick link: [![Open your Home Assistant instance and show the Supervisor add-on store.](https://my.home-assistant.io/badges/supervisor_store.svg)](https://my.home-assistant.io/redirect/supervisor_store/) )
+    1. **Add the reposity** (click 3 dots on the top right of the screen). Reposity URL: *https://github.com/fuslwusl/homeassistant-addon-victoriametrics*
+    1. Refresh/ reload your browser tab/window
+1. **Install** the add-on:
+    * Find, and **install** the Victoria Metrics add-on
+1. Read the add-on documentation in the *Victoria Metrics* **documentation** tab
+1. **Start** the *Victoria Metrics* add-on
+1. **Add the *influxdb* integration** to your Home Assistant configuration 
 (The instructions for adding and configuring the influxdb integration are in the add-ons documentation tab. Don't forget to restart Home Assistant.)
-6. (Optional) Install and configure Grafna, or similar to check data is being logged
+1. (Optional) Install and configure Grafna, or similar to check data is being logged
