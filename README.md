@@ -35,6 +35,7 @@ The direction of InfluxDB 2.0 was not what I wanted in combination with Grafana 
 ## Installation and configuration
 1. Add the reposity:
 >https://github.com/fuslwusl/homeassistant-addon-victoriametrics 
+
 to the HA Add-ons ADD-ON STORE (and refresh/ reload the browser page)
 2. Install the add-on
 3. Read the add-on documentation in the *Victoria Metrics* **documentation** tab
