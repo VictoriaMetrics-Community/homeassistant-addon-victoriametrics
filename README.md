@@ -2,11 +2,11 @@
 
 If you are looking for an efficient and easy to use way for long term storage of your Home Assistant data - just use VictoriaMetrics.
 
-This Add-on makes it easy to run a Victoria Metrics Time Series Database on your Home Assistant OS on ARM64 systems like Raspberry Pi 4.
+This Add-on makes it easy to run a Victoria Metrics Time Series Database on Home Assistant OS on ARM64 systems like Raspberry Pi 4.
 
 ## Replacement for InfluxDB and Prometheus
 
-VictoriaMetrics Time Series Database is 100% compatible with the Prometheus and InfluxDB line protocol. So Homeassistant is able to connect to VictoriaMetrics with the InfluxDB. In Grafana you can use the Prometheus or InfluxDB data source.
+VictoriaMetrics Time Series Database is 100% compatible with the Prometheus and InfluxDB line protocol. So Homeassistant is able to connect to VictoriaMetrics with the InfluxDB integration. In Grafana you can use the Prometheus or InfluxDB data source to use your data in your Victoria Metrics database.
 
 ## Much better long term storage
 
@@ -28,6 +28,16 @@ There are many reasons to switch to Victoria Metrics. Compared to other products
 [VictoriaMetrics vs. InfluxDB vs. Timescale](https://valyala.medium.com/when-size-matters-benchmarking-victoriametrics-vs-timescale-and-influxdb-6035811952d4)
 
 
-This Add-On continues the work of Andreas Habel whose [hassio-victoriametrics](https://github.com/Exceptionfault/hassio-victoriametrics) Add-On was not updated anymore since 2021.
+This Add-On continues the work of Andreas Habel whose [hassio-victoriametrics](https://github.com/Exceptionfault/hassio-victoriametrics) Add-On was not updated  since 2021.
 I developed this mainly for my purpose running VictoriaMetrics on my Raspberry Pi 4 running Home Assistant Operating System.
 The direction of InfluxDB 2.0 was not what I wanted in combination with Grafana so VictoriaMetrics Time Series Database was the best choice.
+
+## Installation and configuration
+1. Add the reposity:
+>https://github.com/fuslwusl/homeassistant-addon-victoriametrics 
+to the HA Add-ons ADD-ON STORE (and refresh/ reload the browser page)
+2. Install the add-on
+3. Read the add-on documentation in the *Victoria Metrics* **documentation** tab
+4. Start the *Victoria Metrics* add-on
+5. Add the *influxdb* integration to your Home Assistant configuration 
+(The instructions for the influxdb integration are in the add-ons documentation tab, don't forget to restart Home Assistant)
