@@ -33,12 +33,14 @@ I developed this mainly for my purpose running VictoriaMetrics on my Raspberry P
 The direction of InfluxDB 2.0 was not what I wanted in combination with Grafana so VictoriaMetrics Time Series Database was the best choice.
 
 ## Installation and configuration
-1. Add the reposity:
->https://github.com/fuslwusl/homeassistant-addon-victoriametrics 
+(These instructions are intended for experienced Home Assistant users.) 
 
+1. Add the reposity:
+*https://github.com/fuslwusl/homeassistant-addon-victoriametrics*
 to the HA Add-ons ADD-ON STORE (and refresh/ reload the browser page)
-2. Install the add-on
+2. **Install** the add-on
 3. Read the add-on documentation in the *Victoria Metrics* **documentation** tab
-4. Start the *Victoria Metrics* add-on
-5. Add the *influxdb* integration to your Home Assistant configuration 
-(The instructions for the influxdb integration are in the add-ons documentation tab, don't forget to restart Home Assistant)
+4. **Start** the *Victoria Metrics* add-on
+5. **Add the *influxdb* integration** to your Home Assistant configuration 
+(The instructions for adding and configuring the influxdb integration are in the add-ons documentation tab. Don't forget to restart Home Assistant.)
+6. (Optional) Install and configure Grafna, or similar to check data is being logged
