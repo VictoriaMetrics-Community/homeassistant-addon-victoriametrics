@@ -1,10 +1,17 @@
 # Victoria Metrics for Home Assistant
 
-
-## Steps to get everything running
-* Just copy the folder `victoria-metrics` to your `homeassistant/addons/`
+## Installation and Configuration
+### Install the Add-On
+If you are reading this in the documentation tab of the add on - you have completed this step.
+Otherwise:
 * Install the Add-on  
   [![Open your Home Assistant instance and show the Supervisor add-on store.](https://my.home-assistant.io/badges/supervisor_store.svg)](https://my.home-assistant.io/redirect/supervisor_store/)
+* **Add the reposity** (click 3 dots on the top right of the screen). Reposity URL: https://github.com/fuslwusl/homeassistant-addon-victoriametrics
+* Refresh/ reload your browser tab/window
+* Find, and install the add-on
+
+### Steps to get everything running
+Once the add-on is installed:
 * Read the Add-on documentation
 * Check the configuration page of the Add-on to change retention time - default is 99 years
 * Now you can press Start - the first start can take a minute or two
@@ -27,7 +34,7 @@ See: https://github.com/VictoriaMetrics/VictoriaMetrics#retention
 
 ### Sending data to VictoriaMetrics
 To send data from Home Assistant to VictoriaMetrics, you can use the `InfluxDB` integration. 
-Add the following code to your `configuration.yaml` to have a basic setup.
+Add the following code to your `configuration.yaml` to have a basic setup. (And, of course, restart Home Assistant.)
 With the option `measurement_attr: entity_id` you will get the `entity_id` as metric name what is great in combination with Grafana - just one click and you get the data you want. In Grafana you can use the prometheus data source to get access to your time series data. Have fun!
 
 ```yml
@@ -144,7 +151,7 @@ Also make sure to create a long-living token as `bearer_token` for authenticatio
 
 #### Setup data source
 
-Select Prometheus as Data Source with the following parameters:
+Select Prometheus as Data Source with the following parameters (the URL must include the *http://* prefix):
 
 HTTP / Field: URL  
 ```http://YOUR_HOMEASSISTANT_IP_ADDRESS:8428/prometheus```
@@ -152,6 +159,7 @@ HTTP / Field: URL
 HTTP / Field: Access  
 ```Server (default)```
 
+This is all the configuration that is required. There are no user accounts, tokens or secrets to be setup.
 
 #### Add a panel
 
