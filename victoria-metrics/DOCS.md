@@ -1,19 +1,21 @@
 # Victoria Metrics for Home Assistant
 
 ## Installation and Configuration
-### Install the Add-On
-If you are reading this in the documentation tab of the add on - you have completed this step.
+
+### Install the add-on
+If you are reading this in the documentation tab of the add-on - you have already completed this step. 
 Otherwise:
-* Install the Add-on  
-  [![Open your Home Assistant instance and show the Supervisor add-on store.](https://my.home-assistant.io/badges/supervisor_store.svg)](https://my.home-assistant.io/redirect/supervisor_store/)
-* **Add the reposity** (click 3 dots on the top right of the screen). Reposity URL: https://github.com/fuslwusl/homeassistant-addon-victoriametrics
-* Refresh/ reload your browser tab/window
-* Find, and install the add-on
+* Add the reposity. (Quick link: [![Open your Home Assistant instance and show the Supervisor add-on store.](https://my.home-assistant.io/badges/supervisor_store.svg)](https://my.home-assistant.io/redirect/supervisor_store/) )
+    * Add the reposity (click 3 dots on the top right of the screen). Reposity URL: *https://github.com/fuslwusl/homeassistant-addon-victoriametrics*
+    * Refresh/reload your browser tab/window
+* Install the add-on:
+    * Find, and **install** the Victoria Metrics Add-on
 
 ### Steps to get everything running
 Once the add-on is installed:
-* Read the Add-on documentation
-* Check the configuration page of the Add-on to change retention time - default is 99 years
+
+* Read the add-on documentation
+* Check the configuration page of the add-on to change retention time - default is 99 years
 * Now you can press Start - the first start can take a minute or two
 * When the green circle shows up victoriametrics is running and ready for your data
 * Add influxdb integration to your homeassistant config (using the option `measurement_attr: entity_id` is recommended)

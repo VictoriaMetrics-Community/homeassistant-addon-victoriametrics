@@ -2,11 +2,11 @@
 
 If you are looking for an efficient and easy to use way for long term storage of your Home Assistant data - just use VictoriaMetrics.
 
-This Add-on makes it easy to run a Victoria Metrics Time Series Database on your Home Assistant OS on ARM64 systems like Raspberry Pi 4.
+This add-on makes it easy to run a Victoria Metrics Time Series Database on Home Assistant OS on ARM64 systems like Raspberry Pi 4.
 
 ## Replacement for InfluxDB and Prometheus
 
-VictoriaMetrics Time Series Database is 100% compatible with the Prometheus and InfluxDB line protocol. So Homeassistant is able to connect to VictoriaMetrics with the InfluxDB. In Grafana you can use the Prometheus or InfluxDB data source.
+VictoriaMetrics Time Series Database is 100% compatible with the Prometheus and InfluxDB line protocol. So Homeassistant is able to connect to VictoriaMetrics with the InfluxDB integration. In Grafana you can use the Prometheus or InfluxDB data source to use your data in your Victoria Metrics database.
 
 ## Much better long term storage
 
@@ -28,19 +28,19 @@ There are many reasons to switch to Victoria Metrics. Compared to other products
 [VictoriaMetrics vs. InfluxDB vs. Timescale](https://valyala.medium.com/when-size-matters-benchmarking-victoriametrics-vs-timescale-and-influxdb-6035811952d4)
 
 
-This Add-On continues the work of Andreas Habel whose [hassio-victoriametrics](https://github.com/Exceptionfault/hassio-victoriametrics) add-on was not updated anymore since 2021.
+This add-on continues the work of Andreas Habel whose [hassio-victoriametrics](https://github.com/Exceptionfault/hassio-victoriametrics) add-on was not updated since 2021.
 I developed this mainly for my purpose running VictoriaMetrics on my Raspberry Pi 4 running Home Assistant Operating System.
 The direction of InfluxDB 2.0 was not what I wanted in combination with Grafana so VictoriaMetrics Time Series Database was the best choice.
 
+## Installation and configuration
 
-## Steps to get everything running
-
-* Just copy the folder `victoria-metrics` to your `homeassistant/addons/`
-* Install the Add-on  
-  [![Open your Home Assistant instance and show the Supervisor add-on store.](https://my.home-assistant.io/badges/supervisor_store.svg)](https://my.home-assistant.io/redirect/supervisor_store/)
-* Read the Add-on documentation
-* Check the configuration page of the Add-on to change retention time - default is 99 years
-* Now you can press Start - the first start can take a minute or two
-* When the green circle shows up victoriametrics is running and ready for your data
-* Add influxdb integration to your homeassistant config (using the option `measurement_attr: entity_id` is recommended)
-* Restart Home Assistant
+1. Add the reposity. (Quick link: [![Open your Home Assistant instance and show the Supervisor add-on store.](https://my.home-assistant.io/badges/supervisor_store.svg)](https://my.home-assistant.io/redirect/supervisor_store/) )
+    * **Add the reposity** (click 3 dots on the top right of the screen). Reposity URL: *https://github.com/fuslwusl/homeassistant-addon-victoriametrics*
+    * Refresh/reload your browser tab/window
+2. **Install** the add-on:
+    * Find, and **install** the Victoria Metrics add-on
+3. Read the add-on documentation in the *Victoria Metrics* **documentation** tab
+4. **Start** the *Victoria Metrics* add-on
+5. **Add the *influxdb* integration** to your Home Assistant configuration 
+   (The instructions for adding and configuring the influxdb integration are in the add-ons documentation tab. Don't forget to restart Home Assistant.)
+6. (Optional) Install and configure Grafana, or similar to check data is being logged
