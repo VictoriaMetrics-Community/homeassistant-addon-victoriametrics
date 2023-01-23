@@ -1,3 +1,8 @@
+## 1.8.15
+
+- Updated to VictoriaMetrics 1.86.1
+- Updated documentation
+
 ## 1.8.14
 
 - Updated to VictoriaMetrics 1.83.1

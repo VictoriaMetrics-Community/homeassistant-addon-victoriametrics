@@ -10,7 +10,7 @@ VictoriaMetrics Time Series Database is 100% compatible with the Prometheus and 
 
 ## Much better long term storage
 
-VictoriaMetrics offers an ultra efficient compression for data storage, is highly optimized for time series data and has low RAM usage. So this is the perfect solution for long term storage of high amounts of data like all sensor values of your smart home.
+VictoriaMetrics offers an ultra efficient sompression for data storage, is highly optimized for time series data and has low RAM usage. So this is the perfect solution for long term storage of high amounts of data like all sensor values of your smart home.
 
 There are many reasons to switch to Victoria Metrics. Compared to other products Victoria Metrics offers:
 
