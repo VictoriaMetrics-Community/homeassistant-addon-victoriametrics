@@ -4,7 +4,28 @@ set -e
 RETENTION=$(bashio::config 'retention')
 ARGS=$(bashio::config 'additionalArguments')
 
-bashio::log.info "${RETENTION}"
+
+HTTPAUTHARGS=""
+if bashio::config.true 'enableHTTPAuth'
+then
+    bashio::log.info "Use httpAuth for Victoria Metrics"
+    HTTPAUTHARGS="-httpAuth.username=$(bashio::config 'username') -httpAuth.password=$(bashio::config 'password')"
+fi
+
+PROMETHEUSARGS=""
+if bashio::config.true 'enablePrometheusScrape'
+then
+    bashio::log.info "Use promscrape config for Victoria Metrics"
+    SCHEME="http"
+    if bashio::config.true 'prometheusScrapeHTTPS'
+    then
+        SCHEME="https"
+    fi
+    echo '{"token": "'$(bashio::config 'longelivedToken')'", "scheme": "'$SCHEME'", "homeassistanturl": "'$(bashio::config 'homeassistantUrl')'"}' | tempio -template /prometheus.tpl -out /prometheus.yml
+    PROMETHEUSARGS="-promscrape.config /prometheus.yml"
+fi
+
+
 bashio::log.info "Starting Victoria Metrics with retention set to $RETENTION"
 bashio::log.info "Starting Victoria Metrics with args set to $ARGS"
-"/victoria-metrics-prod" "-storageDataPath" "/share/victoria-metrics-data" -retentionPeriod $RETENTION $ARGS
+"/victoria-metrics-prod" "-storageDataPath" "/share/victoria-metrics-data" -retentionPeriod $RETENTION $HTTPAUTHARGS $PROMETHEUSARGS $ARGS

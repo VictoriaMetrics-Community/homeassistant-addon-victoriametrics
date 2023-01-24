@@ -20,6 +20,20 @@ map:
 options:
   retention: "99y"
   additionalArguments: ""
+  enableHTTPAuth: false
+  username: ""
+  password: ""
+  enablePrometheusScrape: false
+  prometheusScrapeHTTPS: false
+  longelivedToken: ""
+  homeassistantUrl: ""
 schema:
   retention: "str?"
   additionalArguments: "str?"
+  enableHTTPAuth: bool
+  username: "str?"
+  password: "password?"
+  enablePrometheusScrape: bool
+  prometheusScrapeHTTPS: bool
+  longelivedToken: "password?"
+  homeassistantUrl: "str?"

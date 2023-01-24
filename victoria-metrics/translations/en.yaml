@@ -2,4 +2,27 @@ configuration:
   retention:
     name: Retention
     description: Defines the retention in month to store data. You can also use years or days for example `2y` or `30d`.
-    
+  additionalArguments:
+    name: Additional Arguments
+    description: Defines additional arguments, checkout https://github.com/VictoriaMetrics/VictoriaMetrics or the Victoria Metrics documentation.
+  enableHTTPAuth:
+    name: Enable HTTPAuth
+    description: If set to true, the Username and Password are used as basicAuth/httpAuth in front of Victoria Metrics.
+  username:
+    name: Username
+    description: Username for the basicAuth/httpAuth (has no effect if HTTPAuth is not enabled).
+  password:
+    name: Password
+    description: Password for the basicAuth/httpAuth (has no effect if HTTPAuth is not enabled).
+  enablePrometheusScrape:
+    name: Enable Prometheus scrape
+    description: If set to true, a Prometheus scrape for Home Assistant will be configured in Victoria Metrics. https://www.home-assistant.io/integrations/prometheus
+  prometheusScrapeHTTPS:
+    name: Use HTTPS Prometheus scrape
+    description: Set to true if you use a HTTPS connection for your Home Assistant.
+  longelivedToken:
+    name: Long-lived access token
+    description: Long-lived access token for Prometheus scrape (has no effect if Prometheus scrape is not enabled).
+  homeassistantUrl:
+    name: Home Assistant URL
+    description: Home Assistant URL incl. port for Prometheus scrape (example "homeassistant:8123") (has no effect if Prometheus scrape is not enabled).
