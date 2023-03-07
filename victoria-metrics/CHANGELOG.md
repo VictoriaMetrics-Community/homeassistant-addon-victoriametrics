@@ -1,3 +1,9 @@
+## 1.8.17
+
+- Added setting for basicAuth/httpAuth and prometheus scrape (thanx to dergeberl)
+- Updated to VictoriaMetrics 1.88.1
+- Updated documentation
+
 ## 1.8.15
 
 - Updated to VictoriaMetrics 1.86.1
