@@ -5,7 +5,7 @@ FROM $BUILD_FROM
 COPY start-victoria-metrics /
 COPY prometheus.tpl /
 WORKDIR /share/victoria-metrics-data
-ARG VERSION=v1.86.1
+ARG VERSION=v1.88.1
 
 RUN /bin/bash -c 'set -ex && \
     ARCH=$(uname -m) && \

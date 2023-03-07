@@ -1,10 +1,11 @@
 name: Victoria Metrics add-on
-version: "1.8.15"
+version: "1.8.17"
 slug: victoria_metrics
 description: Victoria Metrics Time Series Database add-on for long term storage as replacement for Prometheus and InfluxDB
 webui: "http://[HOST]:[PORT:8428]/"
-# ingress: true
-# ingress_port: 8428
+ingress: true
+ingress_port: 8428
+ingress_entry: /vmui
 # host_network: true
 ports:
   8428/tcp: 8428

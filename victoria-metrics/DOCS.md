@@ -42,7 +42,7 @@ With the option `measurement_attr: entity_id` you will get the `entity_id` as me
 ```yml
 influxdb:
   api_version: 1
-  host: <<<YOUR LOCAL HOME ASSISTANT IP>>>
+  host: <<<ADD-ON HOSTNAME FROM ADD-ON PAGE>>>
   port: 8428
   max_retries: 3
   measurement_attr: entity_id
