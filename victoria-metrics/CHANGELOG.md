@@ -1,3 +1,7 @@
+## 1.8.18
+
+- Added support for Prometheus scraping job parameters (interval, timeout)
+
 ## 1.8.17
 
 - Added setting for basicAuth/httpAuth and prometheus scrape (thanx to dergeberl)
