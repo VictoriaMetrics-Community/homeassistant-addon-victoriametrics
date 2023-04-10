@@ -26,6 +26,8 @@ options:
   password: ""
   enablePrometheusScrape: false
   prometheusScrapeHTTPS: false
+  prometheusScrapeInterval: "20s"
+  prometheusScrapeTimeout: "15s"
   longelivedToken: ""
   homeassistantUrl: ""
 schema:
@@ -36,5 +38,7 @@ schema:
   password: "password?"
   enablePrometheusScrape: bool
   prometheusScrapeHTTPS: bool
+  prometheusScrapeInterval: "str?"
+  prometheusScrapeTimeout: "str?"
   longelivedToken: "password?"
   homeassistantUrl: "str?"

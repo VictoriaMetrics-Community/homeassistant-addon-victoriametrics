@@ -21,7 +21,7 @@ then
     then
         SCHEME="https"
     fi
-    echo '{"token": "'$(bashio::config 'longelivedToken')'", "scheme": "'$SCHEME'", "homeassistanturl": "'$(bashio::config 'homeassistantUrl')'"}' | tempio -template /prometheus.tpl -out /prometheus.yml
+    echo '{"token": "'$(bashio::config 'longelivedToken')'", "scheme": "'$SCHEME'", "homeassistantUrl": "'$(bashio::config 'homeassistantUrl')'", "prometheusScrapeInterval": "'$(bashio::config 'prometheusScrapeInterval')'", "prometheusScrapeTimeout": "'$(bashio::config 'prometheusScrapeTimeout')'"}' | tempio -template /prometheus.tpl -out /prometheus.yml
     PROMETHEUSARGS="-promscrape.config /prometheus.yml"
 fi
 

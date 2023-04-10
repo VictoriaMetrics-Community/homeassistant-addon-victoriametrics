@@ -20,6 +20,12 @@ configuration:
   prometheusScrapeHTTPS:
     name: Benutze HTTPS Prometheus scrape
     description: Wenn aktiv, wird für die Verbindung zu Home Assistant HTTPS benutzt.
+  prometheusScrapeInterval:
+    name: TODO
+    description: TODO
+  prometheusScrapeTimeout:
+    name: TODO
+    description: TODO
   longelivedToken:
     name: Long-lived access token
     description: Long-lived access für den Prometheus scrape (hat keinen Effekt, wenn Prometheus scrape nicht aktiviert ist).
