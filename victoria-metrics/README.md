@@ -2,7 +2,7 @@
 
 If you are looking for an efficient and easy to use way for long term storage of your Home Assistant data - just use VictoriaMetrics.
 
-This add-on makes it easy to run a Victoria Metrics Time Series Database on Home Assistant OS on ARM64 systems like Raspberry Pi 4.
+This add-on makes it easy to run a Victoria Metrics Time Series Database on Home Assistant OS on ARM64 systems like Raspberry Pi 4 and many others (armhf, armv7, aarch64, amd64).
 
 ## Replacement for InfluxDB and Prometheus
 

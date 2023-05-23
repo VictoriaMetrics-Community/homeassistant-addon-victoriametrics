@@ -1,3 +1,7 @@
+## 1.8.19
+
+- Updated to VictoriaMetrics 1.91.0
+
 ## 1.8.18
 
 - Added support for Prometheus scraping job parameters (interval, timeout)
