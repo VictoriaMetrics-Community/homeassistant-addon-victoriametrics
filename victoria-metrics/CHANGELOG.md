@@ -1,3 +1,7 @@
+## 1.8.20
+
+- Updated to VictoriaMetrics 1.91.2
+
 ## 1.8.19
 
 - Updated to VictoriaMetrics 1.91.0
