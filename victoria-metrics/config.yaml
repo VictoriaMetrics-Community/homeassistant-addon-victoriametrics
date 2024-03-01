@@ -9,6 +9,9 @@ ingress_entry: /vmui
 # host_network: true
 ports:
   8428/tcp: 8428
+  2004/tcp: null
+ports_description:
+  2004/tcp: Extra connection
 arch:
   - armhf
   - armv7
