@@ -1,4 +1,4 @@
-# Victoria Metrics for Home Assistant
+# VictoriaMetrics for Home Assistant
 
 ## Installation and Configuration
 
@@ -9,7 +9,7 @@ Otherwise:
     * Add the reposity (click 3 dots on the top right of the screen). Reposity URL: *https://github.com/fuslwusl/homeassistant-addon-victoriametrics*
     * Refresh/reload your browser tab/window
 * Install the add-on:
-    * Find, and **install** the Victoria Metrics Add-on
+    * Find, and **install** the VictoriaMetrics Add-on
 
 ### Steps to get everything running
 Once the add-on is installed:
