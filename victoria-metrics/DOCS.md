@@ -188,8 +188,8 @@ This can be used to get data from Truenas or other systems that use Graphite.
 
 #### Open port
 
-You will need to open the port 2004 in the settings, along with adding the additional argument `-graphiteListenAddr=:2004`
+You will need to open the port 2003 in the settings, along with adding the additional argument `-graphiteListenAddr=:2003`
 
 #### Sending data
 
-Point your graphite exporter to `http://YOUR_HOMEASSISTANT_IP_ADDRESS:2004/`
+Point your graphite exporter to `http://YOUR_HOMEASSISTANT_IP_ADDRESS:2003/`
