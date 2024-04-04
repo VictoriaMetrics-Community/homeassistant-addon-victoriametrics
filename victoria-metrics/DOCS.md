@@ -33,6 +33,11 @@ To define the retention, that is how long VictoriaMetrics will keep it's data, s
 
 See: https://github.com/VictoriaMetrics/VictoriaMetrics#retention
 
+### Additional arguments
+
+You can use advanced configuration options of VictoriaMetrics using parameters.
+As an example add HomeAssistant SSL certificates using the following option:
+```-tls -tlsCertFile=/ssl/fullchain.pem -tlsKeyFile=/ssl/privkey.pem```
 
 ### Sending data to VictoriaMetrics
 To send data from Home Assistant to VictoriaMetrics, you can use the `InfluxDB` integration. 

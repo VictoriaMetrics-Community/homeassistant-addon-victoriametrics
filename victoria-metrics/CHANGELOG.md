@@ -1,3 +1,9 @@
+## 1.9.0
+
+- Updated to VictoriaMetrics 1.100.0
+- Add HomeAssistant SSL directory to container
+- Add additional parameter info to docs.
+
 ## 1.8.23
 
 - Updated to VictoriaMetrics 1.99.0
