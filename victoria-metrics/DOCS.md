@@ -187,3 +187,14 @@ Or you can only change the name of one metric/entity:
 Query / Field: Legend  
 ```{{friendly_name}}```
 
+### Graphite
+
+This can be used to get data from Truenas or other systems that use Graphite.
+
+#### Open port
+
+You will need to open the port 2003 in the settings, along with adding the additional argument `-graphiteListenAddr=:2003`
+
+#### Sending data
+
+Point your graphite exporter to `http://YOUR_HOMEASSISTANT_IP_ADDRESS:2003/`
