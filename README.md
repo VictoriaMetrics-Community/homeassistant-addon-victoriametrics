@@ -2,17 +2,17 @@
 
 If you are looking for an efficient and easy to use way for long term storage of your Home Assistant data - just use VictoriaMetrics.
 
-This add-on makes it easy to run a Victoria Metrics Time Series Database on Home Assistant OS on ARM64 systems like Raspberry Pi 4 or AMD64.
+This add-on makes it easy to run a VictoriaMetrics Time Series Database on Home Assistant OS on ARM64 systems like Raspberry Pi 4 or AMD64.
 
 ## Replacement for InfluxDB and Prometheus
 
-VictoriaMetrics Time Series Database is 100% compatible with the Prometheus and InfluxDB line protocol. So Homeassistant is able to connect to VictoriaMetrics with the InfluxDB integration. In Grafana you can use the Prometheus or InfluxDB data source to use your data in your Victoria Metrics database.
+VictoriaMetrics Time Series Database is 100% compatible with the Prometheus and InfluxDB line protocol. So Homeassistant is able to connect to VictoriaMetrics with the InfluxDB integration. In Grafana you can use the Prometheus or InfluxDB data source to use your data in your VictoriaMetrics database.
 
 ## Much better long term storage
 
 VictoriaMetrics offers an ultra efficient compression for data storage, is highly optimized for time series data and has low RAM usage. So this is the perfect solution for long term storage of high amounts of data like all sensor values of your smart home.
 
-There are many reasons to switch to Victoria Metrics. Compared to other products Victoria Metrics offers:
+There are many reasons to switch to VictoriaMetrics. Compared to other products VictoriaMetrics offers:
 
 * better compression
 * better performance
@@ -21,7 +21,7 @@ There are many reasons to switch to Victoria Metrics. Compared to other products
 * outperfomes other time series databases
 * ease of use
 
-[Victoria Metrics on GitHub](https://github.com/VictoriaMetrics/VictoriaMetrics)
+[VictoriaMetrics on GitHub](https://github.com/VictoriaMetrics/VictoriaMetrics)
 
 
 > VictoriaMetrics wins InfluxDB and Timescale in all the queries by a margin of up to 20x. It especially excels at heavy queries, which scan many millions of datapoints across thousands of distinct timeseries. More info here 
@@ -39,15 +39,15 @@ The direction of InfluxDB 2.0 was not what I wanted in combination with Grafana 
     * Refresh/reload your browser tab/window
 
 2. **Install** the add-on:
-    * Find, and **install** the Victoria Metrics add-on
+    * Find, and **install** the VictoriaMetrics add-on
 
-3. Configure Victoria Metrics
-   > Read the [addon documentation](victoria-metrics/DOCS.md) which can also be found on the **Documentation tab** of the [Victoria Metrics addon](https://my.home-assistant.io/redirect/supervisor_store/) in the Home Assistant settings.
+3. Configure VictoriaMetrics
+   > Read the [addon documentation](victoria-metrics/DOCS.md) which can also be found on the **Documentation tab** of the [VictoriaMetrics addon](https://my.home-assistant.io/redirect/supervisor_store/) in the Home Assistant settings.
 
-4. **Start** the *Victoria Metrics* add-on
+4. **Start** the *VictoriaMetrics* add-on
 
 5. **Add the *influxdb* integration** to your Home Assistant configuration
-   > Instructions for adding and configuring the influxdb integration are in the [addon documentation](DOCS.md) which can also be found on the **Documentation tab** of the [Victoria Metrics addon configuration](https://my.home-assistant.io/redirect/supervisor_store/).
+   > Instructions for adding and configuring the influxdb integration are in the [addon documentation](DOCS.md) which can also be found on the **Documentation tab** of the [VictoriaMetrics addon configuration](https://my.home-assistant.io/redirect/supervisor_store/).
 
     > Don't forget to restart Home Assistant!
 
