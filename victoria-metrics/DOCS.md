@@ -47,7 +47,7 @@ With the option `measurement_attr: entity_id` you will get the `entity_id` as me
 ```yml
 influxdb:
   api_version: 1
-  host: <<<ADD-ON HOSTNAME FROM ADD-ON PAGE>>>
+  host: <<<Hostname from Addon Page / IP / Custom Hostname / localhost (this works when running HAOS on ProxMox) >>>
   port: 8428
   max_retries: 3
   measurement_attr: entity_id
