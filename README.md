@@ -24,7 +24,7 @@ There are many reasons to switch to VictoriaMetrics. Compared to other products 
 [VictoriaMetrics on GitHub](https://github.com/VictoriaMetrics/VictoriaMetrics)
 
 
-> VictoriaMetrics wins InfluxDB and Timescale in all the queries by a margin of up to 20x. It especially excels at heavy queries, which scan many millions of datapoints across thousands of distinct timeseries. More info here 
+> VictoriaMetrics wins InfluxDB and Timescale in all the queries by a margin of up to 20x. It especially excels at heavy queries, which scan many millions of datapoints across thousands of distinct timeseries. More info here
 [VictoriaMetrics vs. InfluxDB vs. Timescale](https://valyala.medium.com/when-size-matters-benchmarking-victoriametrics-vs-timescale-and-influxdb-6035811952d4)
 
 
@@ -53,3 +53,6 @@ The direction of InfluxDB 2.0 was not what I wanted in combination with Grafana 
 
 
 Well done! You can install and configure Grafana or similar to check data is being logged.
+
+## InfluxDB data migration
+Many Home Assistant users may have legacy data in InfluxDB that they wish to migrate to VictoriaMetrics. There is a generic [command line tool](https://github.com/VictoriaMetrics/VictoriaMetrics/blob/master/docs/vmctl.md) packaged with VictoriaMetrics that has documenation for [InfluxDB v1.x](https://docs.victoriametrics.com/vmctl/#migrating-data-from-influxdb-1x) although has no specific support for Home Assistant data. For users of InfluxDB v2.x, there is customised migration tool that can be found at https://github.com/maxlyth/influxv2tovm
