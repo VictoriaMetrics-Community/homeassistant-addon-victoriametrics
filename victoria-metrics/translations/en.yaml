@@ -15,7 +15,7 @@ configuration:
     name: Password
     description: Password for the basicAuth/httpAuth (has no effect if HTTPAuth is not enabled).
   enablePrometheusScrape:
-    name: Enable Prometheus scrape
+    name: Add a Prometheus scrape target for Home Assistant
     description: If set to true, a Prometheus scrape for Home Assistant will be configured in Victoria Metrics. https://www.home-assistant.io/integrations/prometheus
   prometheusScrapeHTTPS:
     name: Use HTTPS Prometheus scrape
@@ -32,3 +32,12 @@ configuration:
   homeassistantUrl:
     name: Home Assistant URL
     description: Home Assistant URL incl. port for Prometheus scrape (example "homeassistant:8123") (has no effect if Prometheus scrape is not enabled).
+  prometheusScrapeConfig:
+    name: Prometheus scrape configuration file
+    description: |
+      The name of a prometheus scrape configuration file.
+      See [VictoriaMetrics Docs](https://docs.victoriametrics.com/single-server-victoriametrics/#how-to-scrape-prometheus-exporters-such-as-node-exporter)
+      and [scrape config examples](https://docs.victoriametrics.com/scrape_config_examples/)
+      for more information.
+      Create this file in the `addons_config/victoria_metrics` directory
+      to add additional scrape targets.
