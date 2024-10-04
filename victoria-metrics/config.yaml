@@ -1,5 +1,5 @@
 name: Victoria Metrics
-version: "1.9.2"
+version: "1.9.4"
 slug: victoria_metrics
 description: Time Series Database for long term storage as replacement for Prometheus and InfluxDB
 webui: "http://[HOST]:[PORT:8428]/"
@@ -22,6 +22,7 @@ init: false
 map:
   - share:rw
   - ssl
+  - addon_config
 options:
   retention: "99y"
   additionalArguments: ""
@@ -46,3 +47,4 @@ schema:
   prometheusScrapeTimeout: "str?"
   longelivedToken: "password?"
   homeassistantUrl: "str?"
+  prometheusScrapeConfig: "str?"

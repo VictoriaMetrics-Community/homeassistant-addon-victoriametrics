@@ -15,7 +15,7 @@ fi
 PROMETHEUSARGS=""
 if bashio::config.true 'enablePrometheusScrape'
 then
-    bashio::log.info "Use promscrape config for Victoria Metrics"
+    bashio::log.info "Adding promscrape config for VictoriaMetrics"
     SCHEME="http"
     if bashio::config.true 'prometheusScrapeHTTPS'
     then
@@ -25,7 +25,12 @@ then
     PROMETHEUSARGS="-promscrape.config /prometheus.yml"
 fi
 
+if ! bashio::config.is_empty 'prometheusScrapeConfig'
+then
+    bashio::log.info "Adding user defined promscrape config"
+    PROMETHEUSARGS="$PROMETHEUSARGS -promscrape.config /config/$(bashio::config 'prometheusScrapeConfig')"
+fi
 
-bashio::log.info "Starting Victoria Metrics with retention set to $RETENTION"
-bashio::log.info "Starting Victoria Metrics with args set to $ARGS"
+bashio::log.info "Starting VictoriaMetrics with retention set to $RETENTION"
+bashio::log.info "Starting VictoriaMetrics with args set to $ARGS"
 "/victoria-metrics-prod" "-storageDataPath" "/share/victoria-metrics-data" -retentionPeriod $RETENTION $HTTPAUTHARGS $PROMETHEUSARGS $ARGS
