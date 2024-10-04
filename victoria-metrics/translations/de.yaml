@@ -32,3 +32,10 @@ configuration:
   homeassistantUrl:
     name: Home Assistant URL
     description: Home Assistant URL inkl. Port für den Prometheus scrape (z.B. "homeassistant:8123") (hat keinen Effekt, wenn Prometheus scrape nicht aktiviert ist).
+  prometheusScrapeConfig:
+    name: Prometheus scrape configuration file
+    description: |
+      The name of a prometheus scrape configuration file.
+      See [VictoriaMetrics Docs](https://docs.victoriametrics.com/single-server-victoriametrics/#how-to-scrape-prometheus-exporters-such-as-node-exporter)
+      and [scrape config examples](https://docs.victoriametrics.com/scrape_config_examples) for more information.
+      Create this file in the `addons_config/victoria_metrics` directory to add additional scrape targets.
