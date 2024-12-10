@@ -1,41 +1,41 @@
 configuration:
   retention:
-    name: Retention
-    description: Legt die Dauer für die Aufbewahrung von Daten in Monaten fest. Die Angabe der Dauer kann aber auch in Tagen oder Jahren erfolgen - z. B. `2y` oder `30d`.
+    Name: Datenaufbewahrungsdauer
+    Beschreibung: Legt die Datenaufbewahrungsdauer in Monaten fest. Die Angabe der Dauer kann aber auch in Tagen oder Jahren erfolgen - z. B. `2y` oder `30d`.
   additionalArguments:
-    name: Additional Arguments
-    description: Definiert additional arguments, siehe auch https://github.com/VictoriaMetrics/VictoriaMetrics oder in der Victoria Metrics Dokumentation.
+    Name: Zusätzliche Argumente
+    Beschreibung: Definiert zusätzliche Argumente, siehe auch https://github.com/VictoriaMetrics/VictoriaMetrics oder die Victoria Metrics Dokumentation.
   enableHTTPAuth:
-    name: Aktiviert HTTPAuth
-    description: Wenn aktiv werden Username und Passwort als basicAuth/HTTPAuth verwendet.
+    Name: Aktiviert HTTPAuth
+    Beschreibung: Wenn den Wert auf "true" gesetzt, werden Username und Passwort als basicAuth/HTTPAuth verwendet.
   username:
-    name: Username
-    description: Username für den basicAuth/HTTPAuth (hat keinen Effekt, wenn basicAuth/HTTPAuth nicht aktiviert ist).
+    Name: Username
+    Description: Username für den basicAuth/HTTPAuth (hat keinen Effekt, wenn basicAuth/HTTPAuth nicht aktiviert ist).
   password:
-    name: Passwort
-    description: Password für den basicAuth/HTTPAuth (hat keinen Effekt, wenn basicAuth/HTTPAuth nicht aktiviert ist).
+    Name: Passwort
+    Beschreibung: Password für den basicAuth/HTTPAuth (hat keinen Effekt, wenn basicAuth/HTTPAuth nicht aktiviert ist).
   enablePrometheusScrape:
-    name: Aktiviert Prometheus scrape
-    description: Wenn aktiv, wird ein Prometheus scrape für Home Assistant in Victoria Metrics hinzugefügt. https://www.home-assistant.io/integrations/prometheus
+    Name: Aktiviert Prometheus Scrape-Target für Home Assistant
+    Beschreibung: Wenn den Wert auf "true" gesetzt, wird ein Prometheus Scrape für Home Assistant in Victoria Metrics hinzugefügt. https://www.home-assistant.io/integrations/prometheus
   prometheusScrapeHTTPS:
-    name: Benutze HTTPS Prometheus scrape
-    description: Wenn aktiv, wird für die Verbindung zu Home Assistant HTTPS benutzt.
+    Name: Verwendung von HTTPS Prometheus Scrape
+    Beschreibung: Wenn den Wert auf "true" gesetzt, wird für Home Assistant eine HTTPS-Verbindung verwendet.
   prometheusScrapeInterval:
-    name: Prometheus scraping interval
-    description: Legt fest, wie häufig Daten von Home Assistant abgefragt werden (z. B. "20s").
+    Name: Prometheus Scrape Interval
+    Beschreibung: Festlegen der Häufigkeit des Scrapings des Home Assistant-Target (z. B. "20s").
   prometheusScrapeTimeout:
-    name: Prometheus scraping timeout
-    description:  Timeout für die Abfragen der Daten von Home Assistant (z. B. "15s").
+    Name: Prometheus Scrape Time-out
+    Beschreibung:  Timeout für die Abfragen der Daten von Home Assistant (z. B. "15s").
   longelivedToken:
-    name: Long-lived access token
-    description: Long-lived access für den Prometheus scrape (hat keinen Effekt, wenn Prometheus scrape nicht aktiviert ist).
+    Name: Langlebiger Zugrifftoken
+    Beschreibung: Langlebiger Zugriffstoken für den Prometheus Scrape (hat keinen Effekt, wenn Prometheus Scrape nicht aktiv ist).
   homeassistantUrl:
-    name: Home Assistant URL
-    description: Home Assistant URL inkl. Port für den Prometheus scrape (z.B. "homeassistant:8123") (hat keinen Effekt, wenn Prometheus scrape nicht aktiviert ist).
+    Name: Home Assistant URL
+    Beschreibung: Home Assistant URL inkl. Port für den Prometheus Scrape (z.B. "homeassistant:8123") (hat keinen Effekt, wenn Prometheus Scrape nicht aktiv ist).
   prometheusScrapeConfig:
-    name: Prometheus scrape configuration file
-    description: |
-      The name of a prometheus scrape configuration file.
-      See [VictoriaMetrics Docs](https://docs.victoriametrics.com/single-server-victoriametrics/#how-to-scrape-prometheus-exporters-such-as-node-exporter)
-      and [scrape config examples](https://docs.victoriametrics.com/scrape_config_examples) for more information.
-      Create this file in the `addons_config/victoria_metrics` directory to add additional scrape targets.
+    Name: Prometheus Scrape Konfigurationsdatei
+    Beschreibung: |
+      Der Name einer Prometheus-Scrape-Konfigurationsdatei.
+      Weitere Informationen finden Sie in den [VictoriaMetrics-Dokumenten](https://docs.victoriametrics.com/single-server-victoriametrics/#how-to-scrape-prometheus-exporters-such-as-node-exporter)
+      und [Beispielen für Scrape-Konfigurationen](https://docs.victoriametrics.com/scrape_config_examples).
+      Erstellen Sie diese Datei im Verzeichnis „addons_config/victoria_metrics“, um zusätzliche Scrape-Ziele hinzuzufügen.
