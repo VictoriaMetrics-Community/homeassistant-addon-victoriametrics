@@ -1,6 +1,6 @@
 ## Configuration flags description
 
-### [EN](./en.yaml) | [DE](./DE.yaml) | [ES](./ES.yaml)
+### [EN](./en.yaml) | [DE](./de.yaml) | [ES](./es.yaml)
 
 See also:
 1. [VictoriaMetrics documentation](https://docs.victoriametrics.com/single-server-victoriametrics/)
