@@ -1,3 +1,9 @@
+## 1.108.0
+
+- Updated to VictoriaMetrics 1.108.0
+- Starting by this release the version tagging is aligned with versions of VictoriaMetrics
+
+
 ## 1.9.3
 
 - Updated to VictoriaMetrics 1.103.0
