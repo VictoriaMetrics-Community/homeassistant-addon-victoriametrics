@@ -1,5 +1,5 @@
 name: Victoria Metrics
-version: "1.10.0"
+version: "1.110.0"
 slug: victoria_metrics
 description: Time Series Database for long term storage as replacement for Prometheus and InfluxDB
 webui: "http://[HOST]:[PORT:8428]/"
