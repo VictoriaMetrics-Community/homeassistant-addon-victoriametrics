@@ -94,6 +94,16 @@ influxdb:
     - device_file
     - unit_of_measurement
     - unitOfMeasure
+    - color_mode
+    - hs_color
+    - rgb_color
+    - xy_color
+    - hvac_action
+    - value
+    - writeable
+    - attribution
+    - dataCorrect
+    - dayname
   include:
     domains:
       - sensor
