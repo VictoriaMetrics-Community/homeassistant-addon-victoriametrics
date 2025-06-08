@@ -1,18 +1,15 @@
 #!/usr/bin/with-contenv bashio
 set -e
 
-RETENTION=$(bashio::config 'retention')
 ARGS=$(bashio::config 'additionalArguments')
+ARGS+=" -retentionPeriod $(bashio::config 'retention')"
 
-
-HTTPAUTHARGS=""
 if bashio::config.true 'enableHTTPAuth'
 then
     bashio::log.info "Use httpAuth for Victoria Metrics"
-    HTTPAUTHARGS="-httpAuth.username=$(bashio::config 'username') -httpAuth.password=$(bashio::config 'password')"
+    ARGS+=" -httpAuth.username=$(bashio::config 'username') -httpAuth.password=$(bashio::config 'password')"
 fi
 
-PROMETHEUSARGS=""
 if bashio::config.true 'enablePrometheusScrape'
 then
     bashio::log.info "Adding promscrape config for VictoriaMetrics"
@@ -22,15 +19,13 @@ then
         SCHEME="https"
     fi
     echo '{"token": "'$(bashio::config 'longelivedToken')'", "scheme": "'$SCHEME'", "homeassistantUrl": "'$(bashio::config 'homeassistantUrl')'", "prometheusScrapeInterval": "'$(bashio::config 'prometheusScrapeInterval')'", "prometheusScrapeTimeout": "'$(bashio::config 'prometheusScrapeTimeout')'"}' | tempio -template /prometheus.tpl -out /prometheus.yml
-    PROMETHEUSARGS="-promscrape.config /prometheus.yml"
+    ARGS+=" -promscrape.config /prometheus.yml"
 fi
 
 if ! bashio::config.is_empty 'prometheusScrapeConfig'
 then
     bashio::log.info "Adding user defined promscrape config"
-    PROMETHEUSARGS="$PROMETHEUSARGS -promscrape.config /config/$(bashio::config 'prometheusScrapeConfig')"
+    ARGS+=" -promscrape.config /config/$(bashio::config 'prometheusScrapeConfig')"
 fi
 
-bashio::log.info "Starting VictoriaMetrics with retention set to $RETENTION"
-bashio::log.info "Starting VictoriaMetrics with args set to $ARGS"
-"/victoria-metrics-prod" "-storageDataPath" "/share/victoria-metrics-data" -retentionPeriod $RETENTION $HTTPAUTHARGS $PROMETHEUSARGS $ARGS
+"/victoria-metrics-prod" "-storageDataPath" "/share/victoria-metrics-data" $ARGS
