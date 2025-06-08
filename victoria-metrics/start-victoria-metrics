@@ -1,8 +1,7 @@
 #!/usr/bin/with-contenv bashio
 set -e
 
-ARGS=$(bashio::config 'additionalArguments')
-ARGS+=" -retentionPeriod $(bashio::config 'retention')"
+ARGS="-retentionPeriod $(bashio::config 'retention')"
 
 if bashio::config.true 'enableHTTPAuth'
 then
@@ -27,5 +26,8 @@ then
     bashio::log.info "Adding user defined promscrape config"
     ARGS+=" -promscrape.config /config/$(bashio::config 'prometheusScrapeConfig')"
 fi
+
+# Add user-defined additional arguments
+ARGS+=" $(bashio::config 'additionalArguments')"
 
 "/victoria-metrics-prod" "-storageDataPath" "/share/victoria-metrics-data" $ARGS
