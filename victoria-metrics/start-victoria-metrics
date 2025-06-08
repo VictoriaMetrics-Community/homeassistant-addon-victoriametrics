@@ -21,12 +21,6 @@ then
     ARGS+=" -promscrape.config /prometheus.yml"
 fi
 
-if ! bashio::config.is_empty 'prometheusScrapeConfig'
-then
-    bashio::log.info "Adding user defined promscrape config"
-    ARGS+=" -promscrape.config /config/$(bashio::config 'prometheusScrapeConfig')"
-fi
-
 # Add user-defined additional arguments
 ARGS+=" $(bashio::config 'additionalArguments')"
 

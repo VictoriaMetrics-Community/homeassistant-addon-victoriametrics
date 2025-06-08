@@ -39,9 +39,11 @@ See: https://github.com/VictoriaMetrics/VictoriaMetrics#retention
 
 ### Scrape Targets
 
-You can add scrape targets by creating a yaml configuration
-file in the `/addons_config/8f49de54_victoria_metrics` folder.
-Set the `prometheusScrapeConfig` option to the filename of the configuration file.
+You can add scrape targets by creating yaml configuration
+files in the `/addons_config/8f49de54_victoria_metrics` folder.
+All yaml files ending with `.yml` and `.yaml` will be loaded as
+scrape configuration files using the [`scrape_config_files`](https://docs.victoriametrics.com/victoriametrics/vmagent/#loading-scrape-configs-from-multiple-files)
+option in the Victoria Metrics scrape configuration file.
 
 ### Extra Victoria Metrics Arguments
 
