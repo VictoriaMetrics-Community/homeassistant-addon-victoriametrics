@@ -47,4 +47,3 @@ schema:
   prometheusScrapeTimeout: "str?"
   longelivedToken: "password?"
   homeassistantUrl: "str?"
-  prometheusScrapeConfig: "str?"

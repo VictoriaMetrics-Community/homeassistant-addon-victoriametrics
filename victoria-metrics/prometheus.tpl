@@ -2,6 +2,10 @@ global:
   scrape_interval: 1m
   scrape_timeout: 15s
 
+scrape_config_files:
+- /config/*.yaml
+- /config/*.yml
+
 scrape_configs:
   - job_name: "home-assistant"
     scrape_interval: "{{.prometheusScrapeInterval}}"
