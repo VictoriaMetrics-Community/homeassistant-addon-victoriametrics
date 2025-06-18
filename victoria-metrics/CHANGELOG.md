@@ -1,3 +1,8 @@
+## 1.119.0
+
+- Updated to VictoriaMetrics 1.119.0
+  See full CHANGELOG here https://docs.victoriametrics.com/changelog/#v11190
+
 ## 1.115.0
 
 - Updated to VictoriaMetrics 1.115.0
