@@ -1,7 +1,7 @@
 #!/usr/bin/with-contenv bashio
 set -e
 
-ARGS="-retentionPeriod $(bashio::config 'retention')"
+ARGS="-storageDataPath /share/victoria-metrics-data -retentionPeriod $(bashio::config 'retention')"
 
 if bashio::config.true 'enableHTTPAuth'
 then
@@ -21,7 +21,13 @@ then
     ARGS+=" -promscrape.config /prometheus.yml"
 fi
 
-# Add user-defined additional arguments
-ARGS+=" $(bashio::config 'additionalArguments')"
+# Get user-defined additional arguments
+USER_ARGS="$(bashio::config 'additionalArguments')"
 
-"/victoria-metrics-prod" "-storageDataPath" "/share/victoria-metrics-data" $ARGS
+if ! "/victoria-metrics-prod" $ARGS $EXTRA_ARGS
+then
+    bashio::log.error "Error starting victoria metrics, retrying without \`additionalArguments\`: ${USER_ARGS}"
+elif ! "/victoria-metrics-prod" $ARGS
+then
+    bashio::log.fatal "Error starting victoria metrics"
+fi
