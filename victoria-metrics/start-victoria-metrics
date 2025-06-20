@@ -24,10 +24,11 @@ fi
 # Get user-defined additional arguments
 USER_ARGS="$(bashio::config 'additionalArguments')"
 
-if ! "/victoria-metrics-prod" $ARGS $EXTRA_ARGS
+if ! "/victoria-metrics-prod" $ARGS $USER_ARGS
 then
     bashio::log.error "Error starting victoria metrics, retrying without \`additionalArguments\`: ${USER_ARGS}"
-elif ! "/victoria-metrics-prod" $ARGS
-then
-    bashio::log.fatal "Error starting victoria metrics"
+    if ! "/victoria-metrics-prod" $ARGS
+    then
+        bashio::log.fatal "Error starting victoria metrics"
+    fi
 fi
