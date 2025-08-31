@@ -34,7 +34,7 @@ The direction of InfluxDB 2.0 was not what I wanted in combination with Grafana 
 
 ## Installation and configuration
 
-1. Add the reposity. (Quick link: [![Open your Home Assistant instance and show the Supervisor add-on store.](https://my.home-assistant.io/badges/supervisor_store.svg)](https://my.home-assistant.io/redirect/supervisor_store/) )
+1. Add the reposity. (Quick link: [![Open your Home Assistant instance and show the Supervisor add-on store.](https://my.home-assistant.io/badges/supervisor_addon.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2FVictoriaMetrics-Community%2Fhomeassistant-addon-victoriametrics) )
     * **Add the reposity** (click 3 dots on the top right of the screen). Reposity URL: *https://github.com/VictoriaMetrics-Community/homeassistant-addon-victoriametrics*
     * Refresh/reload your browser tab/window
 
