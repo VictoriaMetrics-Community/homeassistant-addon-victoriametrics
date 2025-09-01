@@ -7,8 +7,8 @@
 If you are reading this in the documentation tab of the add-on - you have already completed this step.
 
 Otherwise:
-* Add the reposity. (Quick link: [![Open your Home Assistant instance and show the Supervisor add-on store.](https://my.home-assistant.io/badges/supervisor_store.svg)](https://my.home-assistant.io/redirect/supervisor_store/) )
-* Add the reposity (click 3 dots on the top right of the screen). Reposity URL: *https://github.com/VictoriaMetrics-Community/homeassistant-addon-victoriametrics*
+* Add the repository. (Quick link: [![Open your Home Assistant instance and show the Supervisor add-on store.](https://my.home-assistant.io/badges/supervisor_addon.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2FVictoriaMetrics-Community%2Fhomeassistant-addon-victoriametrics) )
+* Add the repository (click 3 dots on the top right of the screen). Repository URL: *https://github.com/VictoriaMetrics-Community/homeassistant-addon-victoriametrics*
 * Refresh/reload your browser tab/window
 * Install the add-on
 * Find, and **install** the VictoriaMetrics Add-on
