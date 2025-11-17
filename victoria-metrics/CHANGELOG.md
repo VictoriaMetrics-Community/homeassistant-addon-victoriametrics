@@ -1,3 +1,33 @@
+## 1.130.0
+
+- Updated to VictoriaMetrics 1.130.0
+  See full CHANGELOG here https://docs.victoriametrics.com/changelog/#v11300
+
+## 1.129.0
+
+- Updated to VictoriaMetrics 1.129.0
+  See full CHANGELOG here https://docs.victoriametrics.com/victoriametrics/changelog/#v11290
+
+## 1.128.0
+
+- Updated to VictoriaMetrics 1.128.0
+  See full CHANGELOG here https://docs.victoriametrics.com/victoriametrics/changelog/#v11280
+
+## 1.126.0
+
+- Updated to VictoriaMetrics 1.126.0
+  See full CHANGELOG here https://docs.victoriametrics.com/victoriametrics/changelog/#v11260
+
+## 1.123.0
+
+- Updated to VictoriaMetrics 1.123.0
+  See full CHANGELOG here https://docs.victoriametrics.com/victoriametrics/changelog/#v11230
+
+## 1.120.0
+
+- Updated to VictoriaMetrics 1.120.0
+  See full CHANGELOG here https://docs.victoriametrics.com/victoriametrics/changelog/#v11200
+
 ## 1.119.0
 
 - Updated to VictoriaMetrics 1.119.0
