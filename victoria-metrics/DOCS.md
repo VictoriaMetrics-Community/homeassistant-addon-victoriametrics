@@ -39,6 +39,8 @@ Before Home Assistant creates a backup, this add-on runs `vmbackup` inside the V
 
 This keeps the database under `/data` during normal operation and gives Home Assistant a consistent VictoriaMetrics backup inside the add-on data folder to include in add-on backups.
 
+If `backupToShare` is enabled, the `vmbackup` output is written to `/share/victoria-metrics-backup/current` instead. This can be useful when an external backup system can read the Home Assistant `share` folder but cannot access add-on data.
+
 ## Configuration
 
 ### Retention

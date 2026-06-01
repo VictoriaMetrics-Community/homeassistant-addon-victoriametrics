@@ -4,8 +4,6 @@ set -e
 DATA_DIR="/data/victoria-metrics-data"
 LEGACY_DATA_DIR="/share/victoria-metrics-data"
 MIGRATION_MARKER="/data/.victoria-metrics-data-migrated"
-BACKUP_DIR="/data/victoria-metrics-backup/current"
-TMP_BACKUP_DIR="/data/victoria-metrics-backup/.current.tmp"
 SNAPSHOT_URL="http://127.0.0.1:8428/snapshot/create"
 
 is_non_empty_dir() {
@@ -34,6 +32,14 @@ migrate_legacy_data() {
 }
 
 backup_data() {
+    BACKUP_BASE_DIR="/data/victoria-metrics-backup"
+    if bashio::config.true 'backupToShare'; then
+        BACKUP_BASE_DIR="/share/victoria-metrics-backup"
+    fi
+
+    BACKUP_DIR="${BACKUP_BASE_DIR}/current"
+    TMP_BACKUP_DIR="${BACKUP_BASE_DIR}/.current.tmp"
+
     bashio::log.info "Creating VictoriaMetrics backup in ${BACKUP_DIR}"
     rm -rf "$TMP_BACKUP_DIR"
     mkdir -p "$TMP_BACKUP_DIR"
