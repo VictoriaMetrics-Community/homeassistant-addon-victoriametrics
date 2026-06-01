@@ -1,7 +1,62 @@
 #!/usr/bin/with-contenv bashio
 set -e
 
-ARGS="-storageDataPath /share/victoria-metrics-data -retentionPeriod $(bashio::config 'retention')"
+DATA_DIR="/data/victoria-metrics-data"
+LEGACY_DATA_DIR="/share/victoria-metrics-data"
+MIGRATION_MARKER="/data/.victoria-metrics-data-migrated"
+BACKUP_DIR="/data/victoria-metrics-backup/current"
+TMP_BACKUP_DIR="/data/victoria-metrics-backup/.current.tmp"
+SNAPSHOT_URL="http://127.0.0.1:8428/snapshot/create"
+
+is_non_empty_dir() {
+    [ -d "$1" ] && [ -n "$(find "$1" -mindepth 1 -maxdepth 1 -print -quit)" ]
+}
+
+migrate_legacy_data() {
+    mkdir -p "$DATA_DIR"
+
+    if [ -f "$MIGRATION_MARKER" ]; then
+        return
+    fi
+
+    if is_non_empty_dir "$LEGACY_DATA_DIR"; then
+        if is_non_empty_dir "$DATA_DIR"; then
+            bashio::log.fatal "Both ${LEGACY_DATA_DIR} and ${DATA_DIR} contain data. Refusing to migrate automatically; move or remove one copy before starting."
+            exit 1
+        fi
+
+        bashio::log.info "Migrating VictoriaMetrics data from ${LEGACY_DATA_DIR} to ${DATA_DIR}"
+        cp -a "${LEGACY_DATA_DIR}/." "$DATA_DIR/"
+        bashio::log.info "Migration complete. The legacy copy in ${LEGACY_DATA_DIR} was left in place and is no longer used."
+    fi
+
+    date -u +"%Y-%m-%dT%H:%M:%SZ" > "$MIGRATION_MARKER"
+}
+
+backup_data() {
+    bashio::log.info "Creating VictoriaMetrics backup in ${BACKUP_DIR}"
+    rm -rf "$TMP_BACKUP_DIR"
+    mkdir -p "$TMP_BACKUP_DIR"
+
+    vmbackup \
+        -storageDataPath="$DATA_DIR" \
+        -snapshot.createURL="$SNAPSHOT_URL" \
+        -dst="fs://${TMP_BACKUP_DIR}"
+
+    rm -rf "$BACKUP_DIR"
+    mv "$TMP_BACKUP_DIR" "$BACKUP_DIR"
+    bashio::log.info "VictoriaMetrics backup is ready in ${BACKUP_DIR}"
+}
+
+if [ "${1:-}" = "backup" ]; then
+    backup_data
+    exit 0
+fi
+
+migrate_legacy_data
+cd "$DATA_DIR"
+
+ARGS="-storageDataPath ${DATA_DIR} -retentionPeriod $(bashio::config 'retention')"
 
 if bashio::config.true 'enableHTTPAuth'
 then
@@ -23,6 +78,12 @@ fi
 
 # Get user-defined additional arguments
 USER_ARGS="$(bashio::config 'additionalArguments')"
+
+if [[ "$USER_ARGS" =~ (^|[[:space:]])-storageDataPath($|[=[:space:]]) ]]
+then
+    bashio::log.fatal "Do not set -storageDataPath in additionalArguments; this add-on stores VictoriaMetrics data in ${DATA_DIR}."
+    exit 1
+fi
 
 if ! "/victoria-metrics-prod" $ARGS $USER_ARGS
 then
