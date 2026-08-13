@@ -1,5 +1,5 @@
 name: VictoriaMetrics
-version: "1.148.0-pr83.1"
+version: "1.148.0-pr83.2"
 slug: victoria_metrics
 description: Time Series Database for long term storage as replacement for Prometheus, InfluxDB or Graphite
 webui: "http://[HOST]:[PORT:8428]/"
@@ -22,8 +22,8 @@ init: false
 backup: hot
 backup_pre: /start-victoria-metrics backup
 backup_exclude:
-  - /data/victoria-metrics-data
-  - /data/victoria-metrics-data/**
+  - victoria-metrics-data
+  - victoria-metrics-data/**
 map:
   - share:rw
   - ssl
