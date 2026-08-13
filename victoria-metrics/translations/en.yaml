@@ -32,6 +32,9 @@ configuration:
   homeassistantUrl:
     name: Home Assistant URL
     description: Home Assistant URL incl. port for Prometheus scrape (example "homeassistant:8123") (has no effect if Prometheus scrape is not enabled).
+  backupToShare:
+    name: Store backups in share
+    description: Store VictoriaMetrics backup exports in `/share/victoria-metrics-backup/current` instead of the add-on data folder, for external backup tools that can access the share folder.
   prometheusScrapeConfig:
     name: Prometheus scrape configuration file
     description: |

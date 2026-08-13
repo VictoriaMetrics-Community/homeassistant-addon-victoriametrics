@@ -27,7 +27,19 @@ Once the add-on is installed:
 
 ## Data Storage
 
-VictoriaMetrtics Data is stored in folder /share/victoria-metrics-data of Home Assistant OS to make individual backups easy.
+VictoriaMetrics data is stored in the add-on's persistent `/data/victoria-metrics-data` folder. On the first start after upgrading to this version, existing data from `/share/victoria-metrics-data` is copied to `/data/victoria-metrics-data` if it has not already been migrated.
+
+The old `/share/victoria-metrics-data` folder is left in place as a safety copy, but VictoriaMetrics no longer reads from or writes to it. After verifying the add-on is running with the migrated data, you can remove the old folder manually if you want to reclaim space.
+
+If both `/share/victoria-metrics-data` and `/data/victoria-metrics-data` already contain files before migration is marked complete, the add-on refuses to start instead of risking an overwrite. Once migration has been marked complete, the old `/share/victoria-metrics-data` copy may still exist and is ignored. Move or remove one of those copies only if the add-on reports this startup error.
+
+## Backups
+
+Before Home Assistant creates a backup, this add-on runs `vmbackup` inside the VictoriaMetrics container. The backup is written to `/data/victoria-metrics-backup/current`, while the live database files under `/data/victoria-metrics-data` are excluded from the raw add-on backup.
+
+This keeps the database under `/data` during normal operation and gives Home Assistant a consistent VictoriaMetrics backup inside the add-on data folder to include in add-on backups.
+
+If `backupToShare` is enabled, the `vmbackup` output is written to `/share/victoria-metrics-backup/current` instead. This can be useful when an external backup system can read the Home Assistant `share` folder but cannot access add-on data.
 
 ## Configuration
 
